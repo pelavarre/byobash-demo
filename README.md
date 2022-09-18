@@ -35,14 +35,19 @@ Trying those Sh Input Lines produces Sh Transcripts such as
 Fork it, edit it, and you'll like it more
 
 1 Put your own 'ls' examples into your own:  bin/ls.py
+<br>
 2 Put your own 'ls' notes into your own:  bin/ls.py --h
+<br>
 3 Put your own 'ls' defaults into your own:  bin/ls.py --
+<br>
 4 Add your own translations to Python from Bash into your own:  bin/ls.py --ext=.py ...
+
+P.S.
 
 To keep your 'ls.py' available to your Sh Terminal inside other Dirs,
 you can add these Py Files into your Sh Path, through some such '~/.bashrc' patch as
 
-    export PATH="${PATH:+$PATH:}/Users/jqdoe/Public/byobash-demo/bin"
+    export PATH="${PATH:+$PATH:}$HOME/Public/byobash-demo/bin"
 
 
 ## Related work
