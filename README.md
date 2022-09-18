@@ -27,7 +27,7 @@ Take Sh Input Lines like these
 
 Trying those Sh Input Lines produces Sh Transcripts such as
 
-    https://github.com/pelavarre/byobash-demo/blob/main/tests/ls.txt
+> https://github.com/pelavarre/byobash-demo/blob/main/tests/ls.txt
 
 
 ## Your turn now
