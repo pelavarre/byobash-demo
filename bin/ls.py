@@ -10,6 +10,9 @@ options:
   --ext [EXT]  print the chosen source code, in the syntax of EXT, don't run it
   -1           show 1 file or dir per line
 
+quirks:
+  '-h' isn't '--help' when it's '--human-readable' notations of k, Ki, M, Mi, etc
+
 examples:
 
   bin/ls.py  # show these examples and exit

@@ -1,0 +1,139 @@
+%
+%
+% git clone https://github.com/pelavarre/byobash-demo.git
+Cloning into 'byobash-demo'...
+remote: Enumerating objects: ..., done.
+remote: Counting objects: 100% (...), done.
+remote: Compressing objects: 100% (...), done.
+remote: Total ... (delta 0), reused ... (delta 0), pack-reused 0
+Receiving objects: 100% (...), ... KiB | ... MiB/s, done.
+%
+% cd byobash-demo/
+%
+%
+% make
+
+make  # show these examples and exit
+make help  # show this help message and exit
+make push  # restyle & test the source, then tell me to push it
+
+open https://twitter.com/intent/tweet?text=.@PELaVarre
+
+%
+% make help
+: # usage: make [|help|style|push]
+: #
+: # work to add Code into GitHub PELaVarre ByoBash-Demo
+: #
+: # examples:
+: #
+: #   make  # show these examples and exit
+: #   make help  # show this help message and exit
+: #   make style  # restyle & test the source, but don't push it
+: #   make push  # restyle & test the source, then tell me to push it
+: #
+: #   open https://twitter.com/intent/tweet?text=@PELaVarre
+: #
+%
+% make push
+. ~/bin/black.source && black $PWD/../byobash-demo/
+All done! ✨ 🍰 ✨
+2 files left unchanged.
+. ~/bin/pips.source && flake8 --max-line-length=999 --max-complexity 10 --ignore=E203,W503 $PWD/../byobash-demo/
+git log --oneline --no-decorate -1
+... ls:  bin/ls.py -1
+git status --short --ignored
+git describe --always --dirty
+...
+:
+: did you mean:  git push
+: press ⌃D to execute, or ⌃C to quit
+cat -
+^Cmake: *** [push] Interrupt: 2
+
+zsh: interrupt  make push
+%
+%
+% bin/ls.py
+
+bin/ls.py  # show these examples and exit
+bin/ls.py --h  # show this help message and exit
+bin/ls.py --  # 'ls -1Fdrt *'
+
+bin/ls.py -1  # show one file or dir per line
+bin/ls.py --ext=.py -1  # show the python code for this, don't run it
+bin/ls.py --e -1  # same deal as 'ls.py --ext=.py -1', just more abbreviated
+
+bin/ls.py -C  # fallback to call on 'ls' to run undefined options
+
+%
+% bin/ls.py --h
+usage: ls.py [--help] [--ext [EXT]] [-1]
+
+show the files and dirs inside a dir
+
+options:
+  --help       show this help message and exit
+  --ext [EXT]  print the chosen source code, in the syntax of EXT, don't run it
+  -1           show 1 file or dir per line
+
+quirks:
+  '-h' isn't '--help' when it's '--human-readable' notations of k, Ki, M, Mi, etc
+
+examples:
+
+  bin/ls.py  # show these examples and exit
+  bin/ls.py --h  # show this help message and exit
+  bin/ls.py --  # 'ls -1Fdrt *'
+
+  bin/ls.py -1  # show one file or dir per line
+  bin/ls.py --ext=.py -1  # show the python code for this, don't run it
+  bin/ls.py --e -1  # same deal as 'ls.py --ext=.py -1', just more abbreviated
+
+  bin/ls.py -C  # fallback to call on 'ls' to run undefined options
+%
+% bin/ls.py --
++ ls -1Fdrt *
+Makefile
+README.md
+bin/
+%
+%
+% bin/ls.py -1
+Makefile
+README.md
+bin
+%
+% bin/ls.py -1 --ext=.py
+#!/usr/bin/env python3
+
+import os
+
+
+names = os.listdir()
+names = list(_ for _ in names if not _.startswith("."))
+
+for name in sorted(names):
+    print(name)
+%
+% bin/ls.py -1 --e >p.py && python3 p.py
+Makefile
+README.md
+bin
+p.py
+%
+% cat p.py
+#!/usr/bin/env python3
+
+import os
+
+
+names = os.listdir()
+names = list(_ for _ in names if not _.startswith("."))
+
+for name in sorted(names):
+    print(name)
+%
+%
+% : posted into:  https://github.com/pelavarre/byobash-demo/blob/main/tests/ls.txt
+% : copied from:  git clone https://github.com/pelavarre/byobash-demo.git

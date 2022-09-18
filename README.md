@@ -2,9 +2,12 @@
 
 **Give you the Python you need to welcome you competently into Sh work**
 
+
 ## Demo script
 
 Try it, you'll like it
+
+Take Sh Input Lines like these
 
     git clone https://github.com/pelavarre/byobash-demo.git
     cd byobash-demo/
@@ -14,13 +17,33 @@ Try it, you'll like it
     make push
 
     bin/ls.py
+    bin/ls.py --h
+    bin/ls.py --
+
     bin/ls.py -1
     bin/ls.py -1 --ext=.py
     bin/ls.py -1 --e >p.py && python3 p.py
+    cat p.py
 
-## Your turn
+Trying those Sh Input Lines produces Sh Transcripts such as
+
+    https://github.com/pelavarre/byobash-demo/blob/main/tests/ls.txt
+
+
+## Your turn now
 
 Fork it, edit it, and you'll like it more
+
+1 Put your own 'ls' examples into your own:  bin/ls.py
+2 Put your own 'ls' notes into your own:  bin/ls.py --h
+3 Put your own 'ls' defaults into your own:  bin/ls.py --
+4 Add your own translations to Python from Bash into your own:  bin/ls.py --ext=.py ...
+
+To keep your 'ls.py' available to your Sh Terminal inside other Dirs,
+you can add these Py Files into your Sh Path, through some such '~/.bashrc' patch as
+
+    export PATH="${PATH:+$PATH:}/Users/jqdoe/Public/byobash-demo/bin"
+
 
 ## Related work
 

@@ -529,7 +529,7 @@ def str_joingrafs(grafs):
     chars = ""
     for graf in grafs:
         if chars:
-            chars += "\n"
+            chars += "\n\n"
         chars += "\n".join(graf)
 
     return chars
